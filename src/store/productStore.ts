@@ -10,14 +10,18 @@ const useProductStore = create<ProductState>((set) => ({
   fetchProducts: async () => {
     set({ loading: true, error: null });
     try {
-      console.log("Base URL:", process.env.REACT_APP_API_BASE_URL);
+      // logging the API url
+     console.log("Base URL:", process.env.REACT_APP_API_BASE_URL);
       // refering to the api in the .env file
       const baseUrl = process.env.REACT_APP_API_BASE_URL;
       // const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/products`);
 
       const response = await axios.get(`${baseUrl}/products`);
       set({ products: response.data, loading: false });
-      console.log(`"data-->",${response.data}`);
+     
+      console.log("data-->", response);
+      console.log("response status-->", response.status);
+      console.log("data-->", response.data);
     } catch (error) {
       let errorMessage = "Unknown error occured";
       if (error instanceof Error) errorMessage = error.message;
