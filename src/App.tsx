@@ -1,17 +1,14 @@
+import "./App.css";
 
-import './App.css';
-// import { Counter } from './components/Counter';
-import ProductList from './pages/products/ProductList';
-// import TodoList from './pages/todo/TodoList';
+import { BrowserRouter } from 'react-router-dom';
+
+import AppRoutes from "./routes/Routes";
 
 function App() {
   return (
-    <div className="App">
-    {/* <Counter/> */}
-    {/* <TodoList/> */}
-    <ProductList/>
-
-    </div>
+     <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
