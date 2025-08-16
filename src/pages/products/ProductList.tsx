@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useProductStore from "../../store/productStore";
 import ProductCard from "../../components/products/ProductCard";
 import "./Product.css";
+import LoadingSpinner from "../../components/common/loader/LoadingSpinner";
 
 const ProductList = () => {
   const { products, loading, error, fetchProducts } = useProductStore();
@@ -10,7 +11,9 @@ const ProductList = () => {
     fetchProducts();
   }, [fetchProducts]);
 
-  if (loading) return <div>Loading ....</div>;
+  if (loading) return (<>
+  <LoadingSpinner />
+  </>);
   if (error) return <div>Oops {error}</div>;
 
   return (
