@@ -13,6 +13,7 @@ const AppRoutes = () => {
             {/* The protected routes will go in here */}
             <Route path="/products" element={<ProductList />} />
             
+            {/* wild card route */}
             <Route path="*" element={<Login />} />
             </Route>
 

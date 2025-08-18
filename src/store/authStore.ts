@@ -14,7 +14,7 @@ export const useAuthStore = create<AuthState>() (
             user: null,
             isAuthenticated: false,
             login : async (username, password) => {
-                if (username === "admin" && password === "12345"){
+                if (username === "nico" && password === "12345"){
                     set({user: username, isAuthenticated: true})
                 } else{
                     throw new Error("Invalid Credentials");
