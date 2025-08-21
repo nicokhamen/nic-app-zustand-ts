@@ -1,5 +1,5 @@
 import { Product } from "../../entities/Product";
-import { useCartStore } from "../../store/cart";
+import { useCartStore } from "../../store/cartStore";
 
 interface ProductCardProps {
   product: Product;

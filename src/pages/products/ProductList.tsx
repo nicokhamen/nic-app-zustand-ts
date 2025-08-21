@@ -3,7 +3,7 @@ import useProductStore from "../../store/productStore";
 import ProductCard from "../../components/products/ProductCard";
 import "./Product.css";
 import LoadingSpinner from "../../components/common/loader/LoadingSpinner";
-import { useCartStore } from "../../store/cart";
+import { useCartStore } from "../../store/cartStore";
 import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {
