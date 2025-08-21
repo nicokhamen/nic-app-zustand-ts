@@ -7,7 +7,7 @@ interface ProductCardProps {
 
 const ProductCard = ({product}: ProductCardProps) => {
   const addItem = useCartStore((state) => state.addItem);
-  const removeItem = useCartStore((state) => state.removeItem);
+  
   const updateQuatity = useCartStore((state) => state.updateQuantity);
 
   const cartItems = useCartStore((state) => state.items);
@@ -30,9 +30,6 @@ const ProductCard = ({product}: ProductCardProps) => {
       image: product.image,
     })
     console.log("logged");
-  }
-  const removeItemFromCart = (id: number) => {
-    removeItem(id);
   }
 
     return (
