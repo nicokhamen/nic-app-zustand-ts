@@ -4,6 +4,8 @@ import ProductCard from "../../components/products/ProductCard";
 import "./Product.css";
 import LoadingSpinner from "../../components/common/loader/LoadingSpinner";
 
+
+
 const ProductList = () => {
   const { products, loading, error, fetchProducts } = useProductStore();
 
@@ -19,7 +21,7 @@ const ProductList = () => {
   return (
     <>
       <section className="product-listing">
-        <h1 className="page-title">Our Products</h1>
+      
         <div className="product-grid">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />

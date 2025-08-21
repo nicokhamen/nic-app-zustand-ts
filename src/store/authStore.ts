@@ -23,7 +23,7 @@ export const useAuthStore = create<AuthState>() (
             logout: () => set({user: null, isAuthenticated: false}),
         }),
         {
-            name: "auth-storage",//==> this is the key for localStorage persistence
+            name: "auth1-storage",//==> this is the key for localStorage persistence
         }
     )
 );
