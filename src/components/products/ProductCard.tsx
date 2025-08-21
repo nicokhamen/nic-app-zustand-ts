@@ -1,10 +1,12 @@
 import { Product } from "../../entities/Product";
+import { useCartStore } from "../../store/cart";
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({product}: ProductCardProps) => {
+  const { increment, decrement } = useCartStore();
     return (
 <>
 <div className="product-card">
@@ -22,6 +24,8 @@ const ProductCard = ({product}: ProductCardProps) => {
         <div className="product-rating">
           <span>{product.rating.rate}</span>
           <span>({product.rating.count} reviews)</span>
+          <span><button className="quantity-btn increase-btn" onClick={() => increment(product)}>+</button></span>
+          <span><button className="quantity-btn increase-btn" onClick={() => decrement(product)}>-</button></span>
         </div>
       </div>
     </div>
