@@ -1,0 +1,13 @@
+.cart-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;           
+  background-color: #f9f9f9;
+}
+
+.cart-page h1 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}

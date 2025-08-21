@@ -5,9 +5,20 @@
   margin: 0 auto;
 }
 
-.page-title {
-  text-align: center;
+.product-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
+  padding: 0;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  margin: 0;
   color: #2c3e50;
 }
 
@@ -16,6 +27,7 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
 }
+
 
 .product-card {
   border: 1px solid #e0e0e0;
@@ -73,4 +85,186 @@
   gap: 1rem;
   font-size: 0.9rem;
   color: #666;
+}
+
+.product-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.product-actions button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.product-actions button:hover {
+  background: #e63946;
+  color: white;
+  border-color: #e63946;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.05);
+}
+
+.cart-container {
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+  background: #fff;
+  border: 2px solid #f68b1e;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(246, 139, 30, 0.15);
+  transition: all 0.3s ease;
+}
+
+.cart-container:hover {
+  background: #f68b1e;
+  box-shadow: 0 4px 12px rgba(246, 139, 30, 0.25);
+}
+
+.cart-container:hover .cart-emoji {
+  filter: brightness(0) invert(1);
+}
+
+.cart-emoji {
+  font-size: 24px;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e53e3e;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.quantity-btn {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #e63946;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  color: #e63946;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 2px 4px rgba(230, 57, 70, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  margin: 0 2px;
+}
+
+.quantity-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.quantity-btn:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.quantity-btn:hover {
+  background: linear-gradient(145deg, #e63946, #d32f3f);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 4px 8px rgba(230, 57, 70, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-btn:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 
+    0 1px 2px rgba(230, 57, 70, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.increase-btn {
+  background: linear-gradient(145deg, #412db3, #6a39b9);
+  border-color: #e8edee;
+  color: white;
+}
+
+.increase-btn:hover {
+  background: linear-gradient(145deg, #218838, #17a2b8);
+  border-color: #1e7e34;
+  box-shadow: 
+    0 4px 8px rgba(40, 167, 69, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.increase-btn::before {
+  background: radial-gradient(circle, rgba(107, 73, 187, 0.3) 0%, transparent 70%);
+}
+
+
+@media (max-width: 768px) {
+  .product-listing {
+    padding: 1rem;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .cart-container {
+    padding: 6px 10px;
+  }
+  
+  .cart-emoji {
+    font-size: 20px;
+  }
+  
+  .badge {
+    min-width: 18px;
+    height: 18px;
+    font-size: 11px;
+  }
 }

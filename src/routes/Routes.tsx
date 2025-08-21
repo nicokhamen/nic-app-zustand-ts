@@ -4,6 +4,7 @@ import ProtectedRoute from './ProtectedRoute';
 import Home from '../pages/home/Home';
 import ProductList from '../pages/products/ProductList';
 import { Cart } from '../pages/cart/Cart';
+import CartPage from '../pages/cart/cart';
 
 const AppRoutes = () => {
     return(
@@ -14,7 +15,7 @@ const AppRoutes = () => {
             {/* The protected routes will go in here */}
             <Route path="/products" element={<ProductList />} />
             <Route path="/cart" element={<Cart />} />
-            
+            <Route path="/cart" element={<CartPage />} />
             {/* wild card route */}
             <Route path="*" element={<Login />} />
             </Route>
